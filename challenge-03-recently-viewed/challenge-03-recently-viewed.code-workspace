@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../challenge-04-undo-redo-cart"
+		},
+		{
+			"path": "../challenge-08-delivery-route"
+		},
+		{
+			"path": "../challenge-06-inventory-range"
+		},
+		{
+			"path": "../challenge-01-price-finder"
+		}
+	]
+}

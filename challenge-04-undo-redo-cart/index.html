@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Undo / Redo Cart</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#" class="logo"><span class="logo-dot"></span><span id="storeName">Store</span></a>
+      <span class="page-title">Undo / Redo Cart</span>
+      <span class="spacer"></span>
+      <button class="cart-btn" id="openCart" aria-label="Open cart">
+        🛒 <span class="hide-sm">Cart</span>
+        <span class="badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section id="catalog" class="panel">
+      <div class="panel-head">
+        <div>
+          <h2>Shop Products</h2>
+          <p class="muted">Add products to your cart, then open the cart to try Undo / Redo (Ctrl+Z / Ctrl+Y).</p>
+        </div>
+      </div>
+      <div class="cat-tabs" id="catTabs"></div>
+      <div id="catalogGrid" class="card-grid"></div>
+    </section>
+
+  </main>
+
+  <footer class="container footer muted small">
+    Undo / Redo Cart &middot; Plain HTML, CSS &amp; JavaScript
+  </footer>
+
+  <!-- ============ CHALLENGE 4 : CART DRAWER ============ -->
+  <div class="overlay" id="cartOverlay" hidden></div>
+  <aside class="drawer" id="cartDrawer" aria-hidden="true" aria-label="Shopping cart">
+    <div class="drawer-head">
+      <div>
+        <span class="tag">Challenge 4</span>
+        <h2>Your Cart</h2>
+      </div>
+      <button class="icon-btn" id="closeCart" aria-label="Close cart">✕</button>
+    </div>
+
+    <div class="undo-bar">
+      <button class="btn btn-outline" id="undoBtn" title="Undo (Ctrl+Z)">↶ Undo</button>
+      <button class="btn btn-outline" id="redoBtn" title="Redo (Ctrl+Y)">↷ Redo</button>
+    </div>
+
+    <div id="cartItems" class="cart-items"></div>
+
+    <div class="cart-summary">
+      <div><span class="muted">Items</span><b id="cartCount">0</b></div>
+      <div><span class="muted">Total</span><b id="cartTotal">₹0</b></div>
+    </div>
+
+    <details class="history" open>
+      <summary>Operation history</summary>
+      <ul id="opHistory"></ul>
+    </details>
+  </aside>
+
+  <!-- ============ PRODUCT MODAL ============ -->
+  <div class="modal" id="productModal" hidden>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="icon-btn modal-close" id="closeModal" aria-label="Close">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/features/cart.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
